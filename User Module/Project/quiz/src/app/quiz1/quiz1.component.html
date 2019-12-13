@@ -1,0 +1,25 @@
+<b><h2 class="center">TEST</h2></b>
+
+<table class="responsive-table highlight" style="font-size: 35px;"  *ngFor="let tst of testService.tests">
+<ol>
+
+  <tr><td>Q)  {{tst.question}}</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer1);store($event,tst.correctanswer)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer1}}
+</label>
+</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer2);store($event,tst.correctanswer)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer2}}
+  </label>
+</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer3);store($event,tst.correctanswer)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer3}}
+  </label>
+</td></tr>
+</ol>
+</table>
+<button class="btn-large btn-submit" (click)="generatemark()">submit</button>
+<br><br><br>

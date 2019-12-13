@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+              <form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="testService.selectedTest._id">
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <input type="text" name="question" #name="ngModel" [(ngModel)]="testService.selectedTest.question" placeholder="Question" required>
+                          <label class="red-text">*</label>
+
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="answer1" #name="ngModel" [(ngModel)]="testService.selectedTest.answer1" placeholder="Option 1">
+                          <label></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="answer2" #name="ngModel" [(ngModel)]="testService.selectedTest.answer2" placeholder="Option 2">
+                          <label></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="answer3" #name="ngModel" [(ngModel)]="testService.selectedTest.answer3" placeholder="Option 3">
+                          <label></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="correctanswer" #name="ngModel" [(ngModel)]="testService.selectedTest.correctanswer" placeholder="Correct Answer">
+                          <label></label>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                            <button class="btn btn-custom right" type="button" (click)="resetForm(testForm)" >Reset</button>
+                            <button class="btn btn-custom right" type="submit" [disabled]="!testForm.valid" >Submit</button>
+                          </div>
+                        </div>
+              </form>
+
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Question</th>
+                      <th>Answer1</th>
+                      <th>Answer2</th>
+                      <th>Answer3</th>
+                      <th>Correct Answer</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let tst of testService.tests">
+                    <td>{{tst.question}}</td>
+                    <td>{{tst.answer1}}</td>
+                    <td>{{tst.answer2}}</td>
+                    <td>{{tst.answer3}}</td>
+                    <td>{{tst.correctanswer}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(tst)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(tst._id,testForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

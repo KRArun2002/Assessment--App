@@ -1,0 +1,44 @@
+<!-- <h2>Test</h2>
+
+<table class="responsive-table highlight"  *ngFor="let tst of testService.tests">
+<tr><td>{{tst.question}}</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer1)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer1}}
+</label>
+</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer2)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer2}}
+  </label>
+</td></tr>
+<tr><td>
+  <label><input type="checkbox" (click)="check($event,tst.answer3)">  <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+    {{tst.answer3}}
+  </label>
+</td></tr>
+</table> -->
+
+<div class="col s7">
+  <table class="responsive-table highlight">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Answer1</th>
+          <th>Answer2</th>
+          <th>Answer3</th>
+          <th>Correct Answer</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let tst of testService.tests">
+        <td>{{tst.question}}</td>
+        <td>{{tst.answer1}}</td>
+        <td>{{tst.answer2}}</td>
+        <td>{{tst.answer3}}</td>
+        <td>{{tst.correctanswer}}</td>
+        <td>
+
+          </td>
+      </tr>
+    </table>
+</div>
